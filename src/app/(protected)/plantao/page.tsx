@@ -67,7 +67,7 @@ export default function PlantaoPage() {
           const lista = itens.filter(i => i.status === col)
           const cor = col === 'Pendente' ? 'var(--vermelho)' : col === 'Em observação' ? 'var(--amarelo)' : 'var(--verde)'
           return (
-            <div key={col} style={{ background: '#F1EFE8', borderRadius: 10, padding: 8 }}>
+            <div key={col} style={{ background: 'var(--brd-soft)', borderRadius: 10, padding: 8 }}>
               <div style={{ fontSize: 11, fontWeight: 700, padding: '2px 6px 8px', display: 'flex', alignItems: 'center', gap: 6 }}>
                 <span style={{ width: 8, height: 8, borderRadius: 99, background: cor }} />
                 {col} ({lista.length})
@@ -95,7 +95,7 @@ export default function PlantaoPage() {
       <div className="card" style={{ marginTop: 14 }}>
         <div className="card-title">📜 Últimas passagens de turno</div>
         {passagens.length === 0 ? <div className="empty">Nenhuma passagem registrada ainda</div> : passagens.map(p => (
-          <div key={p.id} style={{ padding: '7px 0', borderBottom: '1px solid #F1EFE8' }}>
+          <div key={p.id} style={{ padding: '7px 0', borderBottom: '1px solid var(--brd-soft)' }}>
             <div style={{ display: 'flex', gap: 8, fontSize: 11 }}>
               <span className={`badge ${p.turno === 'Diurno' ? 'bg-info' : 'bg-pendente'}`}>{p.turno}</span>
               <span style={{ color: 'var(--txt3)' }}>{new Date(p.criado_em).toLocaleString('pt-BR')}</span>

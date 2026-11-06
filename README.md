@@ -80,3 +80,8 @@ Conecta ILPI © 2026 — Fortaleza/CE · Documento interno
 O que a simulação NÃO cobre (validar no piloto — condição C1 do parecer):
 login real, RLS com dois usuários de ILPIs diferentes, portal com token válido,
 concorrência de digitação simultânea e comportamento no free tier sob uso contínuo.
+
+## Visual v3 e aplicativo (PWA)
+- Interface refeita na identidade da marca: azul-petróleo #01435F, turquesa #009E93, laranja #FE8705 e fonte Nunito. Todas as telas herdam o novo visual pelo `src/app/globals.css`; as funções e as rotas continuam as mesmas.
+- Menu lateral com ícones próprios (`src/components/ui/Icone.tsx`) que vira gaveta no celular; painel inicial com atalhos; login e cadastro com painel da marca.
+- **Instalar como aplicativo:** com o site publicado em HTTPS, o navegador oferece "Instalar app" (Chrome/Edge no computador e no Android) ou "Adicionar à Tela de Início" (Safari no iPhone). O manifesto fica em `src/app/manifest.ts` e os ícones em `public/`.

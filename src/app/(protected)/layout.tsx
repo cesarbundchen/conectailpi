@@ -1,8 +1,7 @@
-// Layout de todas as páginas autenticadas — sidebar + topbar + toast
+// Layout de todas as páginas autenticadas — menu lateral + barra superior + toast
 // O middleware já bloqueou não-autenticados; aqui carregamos o perfil.
 import { getAuthenticatedUser } from '@/lib/auth'
-import Sidebar from '@/components/layout/Sidebar'
-import Topbar from '@/components/layout/Topbar'
+import AppShell from '@/components/layout/AppShell'
 import { ToastProvider } from '@/components/ui/Toast'
 
 export default async function ProtectedLayout({ children }: { children: React.ReactNode }) {
@@ -13,15 +12,9 @@ export default async function ProtectedLayout({ children }: { children: React.Re
 
   return (
     <ToastProvider>
-      <div style={{ display: 'flex', minHeight: '100vh' }}>
-        <Sidebar ilpiNome={ilpiNome} superAdmin={ehSuperAdmin} />
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
-          <Topbar nomeUsuario={perfil.nome} />
-          <main style={{ flex: 1, padding: '20px 24px', maxWidth: 1080, width: '100%', margin: '0 auto' }}>
-            {children}
-          </main>
-        </div>
-      </div>
+      <AppShell ilpiNome={ilpiNome} superAdmin={ehSuperAdmin} nomeUsuario={perfil.nome}>
+        {children}
+      </AppShell>
     </ToastProvider>
   )
 }

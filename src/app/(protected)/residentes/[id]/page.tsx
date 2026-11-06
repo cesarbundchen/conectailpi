@@ -119,7 +119,7 @@ export default function ProntuarioPage() {
               ['Naturalidade', r.naturalidade], ['Estado civil', r.estado_civil], ['Religião', r.religiao],
               ['Escolaridade', r.escolaridade], ['Profissão anterior', r.profissao],
             ].map(([l, v]) => (
-              <div key={l as string} style={{ display: 'flex', gap: 8, padding: '5px 0', borderBottom: '1px solid #F1EFE8' }}>
+              <div key={l as string} style={{ display: 'flex', gap: 8, padding: '5px 0', borderBottom: '1px solid var(--brd-soft)' }}>
                 <span style={{ color: 'var(--txt3)', width: 120, flexShrink: 0 }}>{l}</span>
                 <span style={{ fontWeight: 500 }}>{(v as string) ?? '—'}</span>
               </div>
@@ -134,7 +134,7 @@ export default function ProntuarioPage() {
         <div className="card">
           {p.medicamentos.length === 0 ? <div className="empty">Nenhum medicamento cadastrado</div> :
             p.medicamentos.map(m => (
-              <div key={m.id} style={{ padding: '10px 0', borderBottom: '1px solid #F1EFE8' }}>
+              <div key={m.id} style={{ padding: '10px 0', borderBottom: '1px solid var(--brd-soft)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <strong style={{ fontSize: 13 }}>{m.nome_medicamento} {m.dosagem}</strong>
                   {m.controlado && <span className="badge bg-aberta">Controlado</span>}
@@ -157,7 +157,7 @@ export default function ProntuarioPage() {
         <div className="card">
           {p.ocorrencias.length === 0 ? <div className="empty">Nenhuma ocorrência registrada</div> :
             p.ocorrencias.map(o => (
-              <div key={o.id} style={{ padding: '10px 0', borderBottom: '1px solid #F1EFE8' }}>
+              <div key={o.id} style={{ padding: '10px 0', borderBottom: '1px solid var(--brd-soft)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <strong style={{ fontSize: 13 }}>{o.tipo_ocorrencia}</strong>
                   <Badge status={o.status} />
@@ -175,7 +175,7 @@ export default function ProntuarioPage() {
         <div className="card">
           {p.atendimentos.length === 0 ? <div className="empty">Nenhum atendimento registrado</div> :
             p.atendimentos.map(a => (
-              <div key={a.id} style={{ padding: '10px 0', borderBottom: '1px solid #F1EFE8' }}>
+              <div key={a.id} style={{ padding: '10px 0', borderBottom: '1px solid var(--brd-soft)' }}>
                 <div style={{ display: 'flex', gap: 8 }}>
                   <strong style={{ fontSize: 13 }}>{a.tipo_atendimento}</strong>
                   <span style={{ fontSize: 11, color: 'var(--txt3)', marginLeft: 'auto' }}>{new Date(a.data_hora).toLocaleString('pt-BR')}</span>
@@ -214,7 +214,7 @@ export default function ProntuarioPage() {
         <div className="card">
           {p.documentos.length === 0 ? <div className="empty">Nenhum documento</div> :
             p.documentos.map(d => (
-              <div key={d.id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0', borderBottom: '1px solid #F1EFE8' }}>
+              <div key={d.id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0', borderBottom: '1px solid var(--brd-soft)' }}>
                 <div style={{ width: 32, height: 32, borderRadius: 6, background: 'var(--azul-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 9, fontWeight: 700, color: 'var(--azul-esc)' }}>
                   {d.tipo.slice(0, 3).toUpperCase()}
                 </div>
@@ -234,7 +234,7 @@ export default function ProntuarioPage() {
         <div className="card">
           {p.responsaveis.length === 0 ? <div className="empty">Nenhum responsável cadastrado</div> :
             p.responsaveis.map(x => (
-              <div key={x.id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0', borderBottom: '1px solid #F1EFE8' }}>
+              <div key={x.id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0', borderBottom: '1px solid var(--brd-soft)' }}>
                 <div className="av" style={{ width: 34, height: 34, fontSize: 11 }}>
                   {x.nome.split(' ').map((w: string, i: number, a: string[]) => i === 0 || i === a.length - 1 ? w[0] : '').join('').toUpperCase()}
                 </div>

@@ -66,13 +66,13 @@ export default function CuidadosPage() {
               const pct = Math.min(100, Math.round(100 * total / meta))
               const cor = pct >= 100 ? 'var(--verde)' : pct >= 60 ? 'var(--azul)' : pct >= 30 ? 'var(--amarelo)' : 'var(--vermelho)'
               return (
-                <div key={r.id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 0', borderBottom: '1px solid #F1EFE8', flexWrap: 'wrap' }}>
+                <div key={r.id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 0', borderBottom: '1px solid var(--brd-soft)', flexWrap: 'wrap' }}>
                   <div style={{ width: 190, minWidth: 150 }}>
                     <div style={{ fontSize: 12, fontWeight: 600 }}>{r.nome}</div>
                     <div style={{ fontSize: 10, color: 'var(--txt3)' }}>Q.{r.quarto ?? '—'} · meta {meta} ml</div>
                   </div>
                   <div style={{ flex: 1, minWidth: 140 }}>
-                    <div style={{ background: '#F1EFE8', borderRadius: 6, height: 16, position: 'relative', overflow: 'hidden' }}>
+                    <div style={{ background: 'var(--brd-soft)', borderRadius: 6, height: 16, position: 'relative', overflow: 'hidden' }}>
                       <div style={{ width: `${pct}%`, background: cor, height: '100%', borderRadius: 6, transition: 'width .3s' }} />
                       <span style={{ position: 'absolute', inset: 0, fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', color: pct > 55 ? '#fff' : 'var(--txt)' }}>
                         {total} ml ({pct}%)
@@ -98,7 +98,7 @@ export default function CuidadosPage() {
             ron.residentes.map(r => {
               const ult = ultimaRonda(r.id)
               return (
-                <div key={r.id} style={{ padding: '9px 0', borderBottom: '1px solid #F1EFE8' }}>
+                <div key={r.id} style={{ padding: '9px 0', borderBottom: '1px solid var(--brd-soft)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                     <div style={{ width: 190, minWidth: 150 }}>
                       <div style={{ fontSize: 12, fontWeight: 600 }}>{r.nome}</div>
@@ -121,7 +121,7 @@ export default function CuidadosPage() {
             <div style={{ marginTop: 14 }}>
               <div style={{ fontSize: 12, fontWeight: 700, marginBottom: 6 }}>Registros do dia ({ron!.registros.length})</div>
               {ron!.registros.slice(0, 30).map((x: D) => (
-                <div key={x.id} style={{ fontSize: 11, padding: '4px 0', borderBottom: '1px solid #F1EFE8', display: 'flex', gap: 8 }}>
+                <div key={x.id} style={{ fontSize: 11, padding: '4px 0', borderBottom: '1px solid var(--brd-soft)', display: 'flex', gap: 8 }}>
                   <span style={{ color: 'var(--txt3)' }}>{new Date(x.data_hora).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</span>
                   <strong>{x.residentes?.nome}</strong>
                   <span className={`badge ${COR_SIT[x.situacao]}`}>{x.situacao}</span>

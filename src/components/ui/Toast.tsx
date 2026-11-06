@@ -19,17 +19,17 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const cores: Record<ToastTipo, string> = {
-    ok: '#0F6E56', erro: '#A32D2D', info: '#1A1A18',
+    ok: '#007A70', erro: '#B42318', info: '#01435F',
   }
 
   return (
     <ToastCtx.Provider value={{ toast }}>
       {children}
-      <div style={{ position: 'fixed', bottom: 20, right: 20, zIndex: 1000, display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <div aria-live="polite" style={{ position: 'fixed', bottom: 'calc(20px + env(safe-area-inset-bottom, 0px))', right: 20, left: 20, zIndex: 1000, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8, pointerEvents: 'none' }}>
         {msgs.map(m => (
           <div key={m.id} style={{
-            background: cores[m.tipo], color: '#fff', padding: '10px 16px',
-            borderRadius: 8, fontSize: 13, maxWidth: 320, boxShadow: '0 4px 12px rgba(0,0,0,.15)',
+            background: cores[m.tipo], color: '#fff', padding: '12px 18px',
+            borderRadius: 12, fontSize: 14, fontWeight: 700, maxWidth: 360, boxShadow: 'var(--sombra-2)',
           }}>
             {m.texto}
           </div>

@@ -44,7 +44,7 @@ export default async function PortalPage({ params }: { params: { token: string }
 
       <Sec titulo="💊 Medicamentos em uso">
         {(meds.data ?? []).length === 0 ? <Vazio /> : (meds.data ?? []).map((m, i) => (
-          <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #F1EFE8' }}>
+          <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid var(--brd-soft)' }}>
             <strong style={{ fontSize: 13 }}>{m.nome_medicamento} {m.dosagem}</strong>
             <div style={{ marginTop: 3 }}>{(m.horarios ?? []).map((h: string) => <span key={h} className="badge bg-info" style={{ marginRight: 4 }}>{h}</span>)}</div>
           </div>
@@ -53,7 +53,7 @@ export default async function PortalPage({ params }: { params: { token: string }
 
       <Sec titulo="📋 Últimas atualizações">
         {(ocs.data ?? []).length === 0 ? <Vazio /> : (ocs.data ?? []).map((o, i) => (
-          <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #F1EFE8' }}>
+          <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid var(--brd-soft)' }}>
             <div style={{ display: 'flex', gap: 8, fontSize: 12 }}>
               <strong>{o.tipo_ocorrencia}</strong>
               <span style={{ marginLeft: 'auto', color: 'var(--txt3)', fontSize: 11 }}>{new Date(o.data_hora).toLocaleDateString('pt-BR')}</span>
@@ -66,7 +66,7 @@ export default async function PortalPage({ params }: { params: { token: string }
 
       <Sec titulo="🩺 Atendimentos recentes">
         {(ats.data ?? []).length === 0 ? <Vazio /> : (ats.data ?? []).map((a, i) => (
-          <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #F1EFE8', fontSize: 12 }}>
+          <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid var(--brd-soft)', fontSize: 12 }}>
             <div style={{ display: 'flex', gap: 8 }}>
               <strong>{a.tipo_atendimento}</strong>
               <span style={{ marginLeft: 'auto', color: 'var(--txt3)', fontSize: 11 }}>{new Date(a.data_hora).toLocaleDateString('pt-BR')}</span>
@@ -94,7 +94,7 @@ export default async function PortalPage({ params }: { params: { token: string }
 
       <Sec titulo="📂 Documentos disponíveis">
         {(docs.data ?? []).length === 0 ? <Vazio /> : (docs.data ?? []).map((d, i) => (
-          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '7px 0', borderBottom: '1px solid #F1EFE8', fontSize: 12 }}>
+          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '7px 0', borderBottom: '1px solid var(--brd-soft)', fontSize: 12 }}>
             <span>{d.nome}</span>
             {d.drive_url && <a href={d.drive_url} target="_blank" rel="noopener" className="btn btn-sm" style={{ marginLeft: 'auto' }}>Abrir ↗</a>}
           </div>

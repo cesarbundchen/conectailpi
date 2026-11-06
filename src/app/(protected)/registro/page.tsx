@@ -129,7 +129,7 @@ export default function RegistroPage() {
             <div className="card-title">📋 Hoje — {resSel?.nome.split(' ')[0]} ({feedHoje.length})</div>
             {feedHoje.length === 0 ? <div className="empty">Nada registrado ainda hoje</div> : (
               feedHoje.slice(0, 12).map((f, i) => (
-                <div key={i} style={{ display: 'flex', gap: 8, padding: '6px 0', borderBottom: '1px solid #F1EFE8', fontSize: 12 }}>
+                <div key={i} style={{ display: 'flex', gap: 8, padding: '6px 0', borderBottom: '1px solid var(--brd-soft)', fontSize: 12 }}>
                   <span style={{ color: 'var(--txt3)', minWidth: 42 }}>{new Date(f.hora).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</span>
                   <span style={{ color: f.cor }}>{f.texto}</span>
                 </div>
@@ -168,7 +168,7 @@ function FormMedicacao({ meds, onCancelar, onSalvar, salvando }: { meds: D[]; on
       {meds.length === 0 ? (
         <div className="empty">Nenhum medicamento ativo para esta residente</div>
       ) : meds.map(m => (
-        <div key={m.id} style={{ padding: '10px 0', borderBottom: '1px solid #F1EFE8' }}>
+        <div key={m.id} style={{ padding: '10px 0', borderBottom: '1px solid var(--brd-soft)' }}>
           <div style={{ fontWeight: 600, fontSize: 13 }}>{m.nome_medicamento} {m.dosagem}{m.controlado && <span className="badge bg-aberta" style={{ marginLeft: 6 }}>Controlado</span>}</div>
           <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 6 }}>
             {(m.horarios ?? []).map((h: string) => (

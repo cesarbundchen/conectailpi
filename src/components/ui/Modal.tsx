@@ -16,23 +16,24 @@ export default function Modal({ aberto, titulo, onFechar, children, larguraMax =
     <div
       onClick={e => { if (e.target === e.currentTarget) onFechar() }}
       style={{
-        position: 'fixed', inset: 0, background: 'rgba(0,0,0,.45)', zIndex: 100,
+        position: 'fixed', inset: 0, background: 'rgba(1, 30, 44, .5)', zIndex: 300,
+        backdropFilter: 'blur(3px)', WebkitBackdropFilter: 'blur(3px)',
         display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
-        padding: '40px 16px', overflowY: 'auto',
+        padding: '48px 14px', overflowY: 'auto',
       }}
     >
-      <div style={{ background: '#fff', borderRadius: 12, width: '100%', maxWidth: larguraMax }}>
+      <div role="dialog" aria-modal="true" aria-label={titulo} style={{ background: 'var(--branco)', borderRadius: 18, width: '100%', maxWidth: larguraMax, boxShadow: 'var(--sombra-3)', overflow: 'hidden' }}>
         <div style={{
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '14px 18px', borderBottom: '1px solid #E0DDD6',
+          padding: '16px 20px', borderBottom: '1px solid var(--brd)', background: '#F6FAFB',
         }}>
-          <div style={{ fontSize: 14, fontWeight: 600 }}>{titulo}</div>
+          <div style={{ fontSize: 16, fontWeight: 900, color: 'var(--azul)' }}>{titulo}</div>
           <button onClick={onFechar} aria-label="Fechar" style={{
-            background: 'none', border: 'none', fontSize: 18, cursor: 'pointer',
-            color: '#6B6A65', padding: 4, lineHeight: 1,
+            background: 'var(--branco)', border: '1px solid var(--brd)', fontSize: 20, cursor: 'pointer',
+            color: 'var(--txt2)', width: 36, height: 36, borderRadius: 10, lineHeight: 1,
           }}>×</button>
         </div>
-        <div style={{ padding: 18, maxHeight: '72vh', overflowY: 'auto' }}>
+        <div style={{ padding: 20, maxHeight: '74vh', overflowY: 'auto' }}>
           {children}
         </div>
       </div>

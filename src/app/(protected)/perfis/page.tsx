@@ -134,7 +134,7 @@ export default function PerfisPage() {
       <Modal aberto={verModelos} titulo="Modelos de perfil (você pode ajustar tudo depois)" onFechar={() => setVerModelos(false)} larguraMax={620}>
         <div className="alert alert-i">Escolha o mais próximo da sua realidade. O modelo só preenche as caixas — nada é gravado até você salvar.</div>
         {modelos.map(m => (
-          <div key={m.nome} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 0', borderBottom: '1px solid #F1EFE8' }}>
+          <div key={m.nome} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 0', borderBottom: '1px solid var(--brd-soft)' }}>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 12, fontWeight: 600 }}>{m.nome}</div>
               <div style={{ fontSize: 10, color: 'var(--txt3)' }}>{m.descricao}</div>
@@ -166,7 +166,7 @@ export default function PerfisPage() {
           <div key={grupo} style={{ marginBottom: 12 }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--txt3)', textTransform: 'uppercase', letterSpacing: '.05em', marginBottom: 4 }}>{grupo}</div>
             {MODULOS.filter(m => m.grupo === grupo).map(m => (
-              <div key={m.id} style={{ padding: '7px 0', borderBottom: '1px solid #F1EFE8' }}>
+              <div key={m.id} style={{ padding: '7px 0', borderBottom: '1px solid var(--brd-soft)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                   <div style={{ width: 210, minWidth: 160 }}>
                     <div style={{ fontSize: 12, fontWeight: 600 }}>

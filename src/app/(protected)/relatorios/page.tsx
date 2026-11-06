@@ -122,7 +122,7 @@ export default function RelatoriosPage() {
                 return (
                   <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '3px 0' }}>
                     <span style={{ width: 180, fontSize: 11 }}>{t}</span>
-                    <div style={{ flex: 1, background: '#F1EFE8', borderRadius: 4, height: 14 }}>
+                    <div style={{ flex: 1, background: 'var(--brd-soft)', borderRadius: 4, height: 14 }}>
                       <div style={{ width: `${(n / max) * 100}%`, background: 'var(--azul)', height: 14, borderRadius: 4 }} />
                     </div>
                     <b style={{ fontSize: 11, width: 20 }}>{n}</b>
@@ -194,7 +194,7 @@ export default function RelatoriosPage() {
             {(dados.acoes ?? []).length > 0 && (<>
               <T>Últimas ações no sistema</T>
               {(dados.acoes ?? []).slice(0, 15).map((h: D, i: number) => (
-                <div key={i} style={{ fontSize: 11, padding: '4px 0', borderBottom: '1px solid #F1EFE8' }}>
+                <div key={i} style={{ fontSize: 11, padding: '4px 0', borderBottom: '1px solid var(--brd-soft)' }}>
                   <b>{h.modulo}</b> · {h.acao} {h.residentes?.nome ? `· ${h.residentes.nome}` : ''}
                   <span style={{ color: 'var(--txt3)', float: 'right', fontSize: 10 }}>{new Date(h.criado_em).toLocaleString('pt-BR')}</span>
                 </div>

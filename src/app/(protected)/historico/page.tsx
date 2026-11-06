@@ -42,7 +42,7 @@ export default function HistoricoPage() {
         {load ? <div className="empty">Carregando...</div> :
           lista.length === 0 ? <div className="empty">Nenhum registro</div> :
             lista.map(h => (
-              <div key={h.id} style={{ display: 'flex', gap: 10, padding: '9px 0', borderBottom: '1px solid #F1EFE8', alignItems: 'flex-start' }}>
+              <div key={h.id} style={{ display: 'flex', gap: 10, padding: '9px 0', borderBottom: '1px solid var(--brd-soft)', alignItems: 'flex-start' }}>
                 <span style={{ fontSize: 15, flexShrink: 0 }}>{ICONES[h.modulo] ?? '📌'}</span>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 12 }}>

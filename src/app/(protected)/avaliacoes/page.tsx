@@ -64,7 +64,7 @@ export default function AvaliacoesPage() {
 
         <div style={{ fontSize: 13, fontWeight: 700, margin: '12px 0 8px', color: 'var(--azul)' }}>{def.nome}</div>
         {def.itens.map(item => (
-          <div key={item.id} style={{ padding: '7px 0', borderBottom: '1px solid #F1EFE8' }}>
+          <div key={item.id} style={{ padding: '7px 0', borderBottom: '1px solid var(--brd-soft)' }}>
             <div style={{ fontSize: 12, fontWeight: 600, marginBottom: 4 }}>{item.rotulo}</div>
             <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
               {item.opcoes.map(op => (
